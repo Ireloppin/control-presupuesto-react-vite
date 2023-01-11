@@ -9,7 +9,7 @@ import FiltroGastos from './components/FiltroGastos';
 function App() {
 
   const [presupuesto, setPresupuesto]= useState(
-    Number(localStorage.getItem('presupuesto'))?? 0
+    Number(localStorage.getItem('presupuesto')) ?? 0
   );
   const [isValidPresupuesto, setIsValidPresupuesto]= useState(false)
 
@@ -42,8 +42,8 @@ function App() {
   }, [presupuesto])
 
   useEffect(()=>{
-    const presupuestoLS= Number(localStorage.getItem('presupuesto'))?? 0;
-    if(presupuestoLS >= 0){
+    const presupuestoLS= Number(localStorage.getItem('presupuesto')) ?? 0;
+    if(presupuestoLS > 0){
       setIsValidPresupuesto(true)
     }
   }, [])
@@ -97,8 +97,8 @@ function App() {
       isValidPresupuesto = {isValidPresupuesto}
       setIsValidPresupuesto = {setIsValidPresupuesto}
       />
-    {isValidPresupuesto && 
-    <>
+    {isValidPresupuesto && (
+      <>
       <main>
       <FiltroGastos
       filtro= {filtro}
@@ -113,11 +113,13 @@ function App() {
       filtro= {filtro}/>
       </main>
         <div className='nuevo-gasto'>
-        <img src={IconoNuevoGasto} alt="Icono Nuevo Gasto" 
-        onClick={handleNuevoGasto}/>
+          <button className='añadir-gasto' type='button' onClick={handleNuevoGasto}>Añadir nuevo gasto </button>
+        {/* <img src={IconoNuevoGasto} alt="Icono Nuevo Gasto" 
+        onClick={handleNuevoGasto}/> */}
       </div>
      </>
-     }
+    )
+    }
 
      {modal && <Modal
      setGastoEditar={setGastoEditar}
