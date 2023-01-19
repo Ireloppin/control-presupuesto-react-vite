@@ -410,9 +410,9 @@ body .modal {
 }
 .añadir-gasto {
     border: none;
-    background-color: #db2777;
+    background-color: #1048a4;
     padding: 1rem;
-    width: 100%;
+    width: 30rem;
     text-align: center;
     color: var(--blanco);
     text-transform: uppercase;
@@ -420,10 +420,23 @@ body .modal {
     border-radius: 1rem;
     transition-property: background-color;
     transition-duration: 300ms;
-}
+    margin: 0rem auto 2rem auto;
+    display: block;
+    }
 .añadir-gasto:hover {
-    background-color: #c71465;
+    background-color:#3b82f6;
     cursor: pointer;
+}
+.instrucciones {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--gris-oscuro);
+    margin: 0 0 1rem 0;
+    text-align: center;
+    
+}
+.instrucciones:last-of-type{
+    margin: 0;
 }
 
 @media(max-width: 768px){
@@ -498,6 +511,12 @@ body .modal {
     .cantidad-gasto {
         font-size: 2.5rem;
     }
+    .añadir-gasto {
+        width: 30rem;
+        max-width: 80%;
+    }
+    
+  
       
 }
 @media(max-width: 500px){
@@ -571,6 +590,11 @@ body .modal {
     }
     .cantidad-gasto {
         font-size: 2rem;
+    }
+    .instrucciones {
+        font-size: 1.3rem;
+        text-align: left;
+        
     }
       
 }

@@ -3,8 +3,8 @@ import Header from './components/Header';
 import { generarID } from './helpers';
 import Modal from './components/Modal';
 import ListaGastos from './components/ListaGastos';
-import IconoNuevoGasto from './img/nuevo-gasto.svg';
 import FiltroGastos from './components/FiltroGastos';
+import Instrucciones from './components/Instrucciones';
 
 function App() {
 
@@ -100,11 +100,14 @@ function App() {
     {isValidPresupuesto && (
       <>
       <main>
+         <div className='contenedor'>
+          <button className='añadir-gasto' type='button' onClick={handleNuevoGasto}>Añadir nuevo gasto </button>
+      </div>  
       <FiltroGastos
       filtro= {filtro}
       setFiltro={setFiltro}
       />
-      
+    
       <ListaGastos
       setGastoEditar= {setGastoEditar}
       eliminarGasto={eliminarGasto}
@@ -112,11 +115,7 @@ function App() {
       gastosFiltrados = {gastosFiltrados}
       filtro= {filtro}/>
       </main>
-        <div className='nuevo-gasto'>
-          <button className='añadir-gasto' type='button' onClick={handleNuevoGasto}>Añadir nuevo gasto </button>
-        {/* <img src={IconoNuevoGasto} alt="Icono Nuevo Gasto" 
-        onClick={handleNuevoGasto}/> */}
-      </div>
+       <Instrucciones/>
      </>
     )
     }
