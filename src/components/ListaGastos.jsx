@@ -18,7 +18,7 @@ const ListaGastos = ({gastos, setGastoEditar, eliminarGasto, gastosFiltrados, fi
          </>
         :
         <>
-        <h2>{gastosFiltrados.length ? 'Gastos': 'No hay gastos registrados'}</h2>
+        <h2>{gastos.length ? 'Gastos': 'No hay gastos registrados'}</h2>
         {gastos.map((gasto)=> 
         <Gasto
         eliminarGasto={eliminarGasto}
